@@ -80,6 +80,26 @@ export default function Home() {
           </ul>
         </div>
       </div>
+      <section className="mt-10 bg-white rounded-xl p-6">
+  <h2 className="text-xl font-bold mb-4">
+    ROIを計算することが重要な理由
+  </h2>
+
+  <p className="mb-3">
+    物販や投資では利益額だけでなく、投資額に対してどれだけ利益が出たかを確認する必要があります。
+    これをROI（投資利益率）といいます。
+  </p>
+
+  <p className="mb-3">
+    ROIを確認することで、どの商品や仕入れ方法が効率的なのかを
+    数字で判断できるようになります。
+  </p>
+
+  <p>
+    このROI計算ツールでは投資額と利益額から
+    投資効率を自動で計算できます。
+  </p>
+</section>
       <section className="mt-10 rounded-xl border bg-white p-5">
   <h2 className="mb-3 text-lg font-bold">ほかの便利ツール</h2>
   <div className="grid gap-2 text-sm">
