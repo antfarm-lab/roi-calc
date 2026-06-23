@@ -1,8 +1,7 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://roi-calc.vercel.app";
-
+ const baseUrl = "https://roi-calc-woad.vercel.app";
   return [
     {
       url: baseUrl,
