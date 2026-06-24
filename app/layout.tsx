@@ -13,9 +13,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ROI計算ツール｜投資利益率を自動計算",
-  description:
-    "仕入れ額と利益額からROI（投資利益率）を自動計算できる無料ツール。せどり・Amazon物販・転売の商品分析に便利です。",
+ title: "ROI計算ツール【無料】投資利益率を自動計算",
+description:
+  "仕入れ額と利益額からROI（投資利益率）を無料で自動計算。Amazonせどりや物販ビジネスの仕入れ判断に役立ちます。",
+keywords: [
+  "ROI計算",
+  "投資利益率",
+  "仕入れ判断",
+  "Amazonせどり",
+  "物販",
+  "利益率",
+],
     verification: {
   google: "miCxwdbgRhGe66W37cjiBB0MFNO1tB2WJxh9Dm_zTjc",
 },
