@@ -59,6 +59,57 @@ export default function Home() {
         </button>
                 
       </div>
+      <section className="mt-12 text-left max-w-3xl mx-auto space-y-6">
+
+  <div>
+    <h2 className="text-2xl font-bold mb-3">
+      1万円仕入れて利益3000円なら効率はいい？
+    </h2>
+    <p>
+      商品を仕入れて販売する場合、利益額だけでなく投資効率を見ることが重要です。
+      1万円仕入れて3000円利益が出ても、
+      実際にどれくらい効率よくお金を増やせているか確認する必要があります。
+    </p>
+  </div>
+
+  <div>
+    <h2 className="text-2xl font-bold mb-3">
+      せどりで利益率とROIは何が違う？
+    </h2>
+    <p>
+      利益率は売上に対する利益割合ですが、
+      ROIは仕入れたお金に対してどれくらい利益が出たかを見る指標です。
+      物販やせどりではROIを確認することで、
+      本当に効率の良い商品か判断しやすくなります。
+    </p>
+  </div>
+
+  <div>
+    <h2 className="text-2xl font-bold mb-3">
+      売上より投資効率を見た方が伸びやすい
+    </h2>
+    <p>
+      月商が高くても仕入れ額が大きければ効率は悪い場合があります。
+      ROIを確認することで、
+      少ない資金でどれだけ利益を増やせるか把握しやすくなります。
+      継続して物販をするなら重要な考え方です。
+    </p>
+  </div>
+
+  <div>
+    <h2 className="text-2xl font-bold mb-3">
+      よくある質問
+    </h2>
+    <p>
+      Q. せどり商品の比較にも使えますか？<br />
+      A. はい。仕入れ額に対する利益効率を比較できます。<br /><br />
+
+      Q. 利益率との違いは何ですか？<br />
+      A. ROIは投資額ベース、利益率は売上ベースで計算します。
+    </p>
+  </div>
+
+</section>
       <section className="mt-10 bg-white rounded-xl p-6">
   <h2 className="text-xl font-bold mb-4">
     ROIを計算することが重要な理由
