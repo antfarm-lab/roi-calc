@@ -10,7 +10,59 @@ export default function Home() {
   const profit = Number(profitAmount) || 0;
 
   const roi = cost > 0 ? (profit / cost) * 100 : 0;
+const profitScore =
+  profit <= 0
+    ? 0
+    : profit < 500
+    ? 10
+    : profit < 1000
+    ? 20
+    : profit < 2000
+    ? 30
+    : 40;
 
+const roiScore =
+  roi <= 0
+    ? 0
+    : roi < 10
+    ? 10
+    : roi < 20
+    ? 20
+    : roi < 30
+    ? 35
+    : roi < 50
+    ? 50
+    : 60;
+
+const score = profitScore + roiScore;
+
+let rank = "D";
+
+if (profit <= 0) {
+  rank = "D";
+} else if (score >= 85) {
+  rank = "S";
+} else if (score >= 70) {
+  rank = "A";
+} else if (score >= 55) {
+  rank = "B";
+} else if (score >= 40) {
+  rank = "C";
+}
+
+if (roi < 10 && rank !== "D") {
+  rank = "C";
+}
+const comment =
+  rank === "S"
+    ? "利益額とROIの両方が高く、資金効率の良い仕入れ候補です。仕入れ資金を効率よく回せる条件です。"
+    : rank === "A"
+    ? "利益額とROIのバランスが良く、十分に検討できる条件です。販売期間や在庫回転も確認しましょう。"
+    : rank === "B"
+    ? "利益は確保できていますが、資金効率にはまだ改善余地があります。よりROIの高い商品と比較して判断しましょう。"
+    : rank === "C"
+    ? "利益またはROIが低めです。資金が長く拘束される可能性もあるため、慎重に判断しましょう。"
+    : "利益または投資効率が不足しています。仕入れ額や利益額の条件を見直しましょう。";
   const reset = () => {
     setCostPrice("");
     setProfitAmount("");
@@ -22,9 +74,9 @@ export default function Home() {
         <h1 className="mb-2 text-2xl font-bold">
           ROI計算ツール
         </h1>
-        <p className="mb-6 text-sm text-gray-600">
-          仕入れ額と利益額から投資利益率（ROI）を計算します。
-        </p>
+       <p className="mb-6 text-sm text-gray-600">
+  仕入れ額と利益額からROIを計算し、利益額と投資効率をANT FARM SCOREで100点評価します。
+</p>
 
         <div className="space-y-4">
           <input
@@ -44,19 +96,97 @@ export default function Home() {
           />
         </div>
 
-        <div className="mt-6 rounded-xl bg-gray-50 p-4">
-          <p className="text-sm text-gray-600">ROI（投資利益率）</p>
-          <p className="text-3xl font-bold">
-            {roi.toFixed(1)}%
+       <div className="mt-6 rounded-xl bg-gray-50 p-4">
+  <p className="text-sm text-gray-600">ROI（投資利益率）</p>
+  <p className="text-3xl font-bold">
+    {roi.toFixed(1)}%
+  </p>
+</div>
+
+<div className="mt-6 rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+  <p className="text-sm font-semibold text-gray-500">
+    ANT FARM SCORE
+  </p>
+
+  {costPrice === "" || profitAmount === "" ? (
+    <p className="mt-3 text-sm text-gray-600">
+      仕入れ額と利益額を入力するとSCOREを判定します。
+    </p>
+  ) : (
+    <>
+      <div className="mt-2 flex items-end justify-between gap-4">
+        <div>
+          <p className="text-4xl font-extrabold text-gray-900">
+            {score}
+            <span className="ml-1 text-lg font-semibold text-gray-500">
+              / 100
+            </span>
+          </p>
+
+          <p className="mt-1 text-sm font-semibold text-gray-700">
+            ランク：{rank}
           </p>
         </div>
 
-        <button
-          onClick={reset}
-          className="mt-6 w-full rounded bg-black py-3 font-bold text-white"
-        >
-          リセット
-        </button>
+        <div className="text-right">
+          <p className="text-xl">
+            {score >= 85
+              ? "⭐⭐⭐⭐⭐"
+              : score >= 70
+              ? "⭐⭐⭐⭐☆"
+              : score >= 55
+              ? "⭐⭐⭐☆☆"
+              : score >= 40
+              ? "⭐⭐☆☆☆"
+              : "⭐☆☆☆☆"}
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-5 border-t border-gray-200 pt-4">
+        <p className="text-sm font-semibold text-gray-600">
+          SCORE内訳
+        </p>
+
+        <ul className="mt-2 space-y-1 text-sm text-gray-600">
+          <li>利益額：{profitScore} / 40点</li>
+          <li>ROI：{roiScore} / 60点</li>
+        </ul>
+      </div>
+
+      <div className="mt-5 border-t border-gray-200 pt-4">
+        <p className="text-sm font-semibold text-gray-600">
+          判定コメント
+        </p>
+
+        <p className="mt-2 text-sm leading-6 text-gray-700">
+          {comment}
+        </p>
+      </div>
+
+      <div className="mt-5 border-t border-gray-200 pt-4">
+        <p className="text-sm font-semibold text-gray-600">
+          SCORE判定基準
+        </p>
+
+        <ul className="mt-2 space-y-1 text-sm text-gray-600">
+          <li>⭐⭐⭐⭐⭐　S：85〜100点　かなり良い仕入れ候補</li>
+          <li>⭐⭐⭐⭐☆　A：70〜84点　仕入れ候補</li>
+          <li>⭐⭐⭐☆☆　B：55〜69点　条件を確認して判断</li>
+          <li>⭐⭐☆☆☆　C：40〜54点　慎重に判断</li>
+          <li>⭐☆☆☆☆　D：0〜39点　条件の見直し推奨</li>
+        </ul>
+      </div>
+    </>
+  )}
+</div>
+
+<button
+  onClick={reset}
+  className="mt-6 w-full rounded bg-black py-3 font-bold text-white"
+>
+  リセット
+</button>
                 
       </div>
       <section className="mt-12 text-left max-w-3xl mx-auto space-y-6">
