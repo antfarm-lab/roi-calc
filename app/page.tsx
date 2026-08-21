@@ -189,8 +189,78 @@ const comment =
 </button>
                 
       </div>
-      <section className="mt-12 text-left max-w-3xl mx-auto space-y-6">
+      <section className="mx-auto mt-6 max-w-3xl rounded-xl border bg-white p-5">
+  <h2 className="text-xl font-bold">
+    ROIの早見表
+  </h2>
 
+  <p className="mt-2 text-sm text-gray-600">
+    仕入れ額10,000円の場合、ROIごとの利益額は次のようになります。
+  </p>
+
+  <div className="mt-4 overflow-x-auto">
+    <table className="w-full border-collapse text-sm">
+      <thead>
+        <tr className="bg-gray-100">
+          <th className="border p-2">ROI</th>
+          <th className="border p-2">仕入れ額</th>
+          <th className="border p-2">利益額</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td className="border p-2 text-center">10%</td>
+          <td className="border p-2 text-right">10,000円</td>
+          <td className="border p-2 text-right">1,000円</td>
+        </tr>
+        <tr>
+          <td className="border p-2 text-center">20%</td>
+          <td className="border p-2 text-right">10,000円</td>
+          <td className="border p-2 text-right">2,000円</td>
+        </tr>
+        <tr>
+          <td className="border p-2 text-center">30%</td>
+          <td className="border p-2 text-right">10,000円</td>
+          <td className="border p-2 text-right">3,000円</td>
+        </tr>
+        <tr>
+          <td className="border p-2 text-center">50%</td>
+          <td className="border p-2 text-right">10,000円</td>
+          <td className="border p-2 text-right">5,000円</td>
+        </tr>
+        <tr>
+          <td className="border p-2 text-center">100%</td>
+          <td className="border p-2 text-right">10,000円</td>
+          <td className="border p-2 text-right">10,000円</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p className="mt-3 text-xs text-gray-500">
+    ROI ＝ 利益額 ÷ 仕入れ額 × 100 で計算しています。
+  </p>
+</section>
+      <section className="mt-12 text-left max-w-3xl mx-auto space-y-6">
+<div>
+  <h2 className="text-2xl font-bold mb-3">
+    ROIの計算式
+  </h2>
+
+  <p className="mb-3">
+    ROIは、投資した金額に対してどれくらい利益が出たかを割合で表す指標です。
+  </p>
+
+  <div className="rounded-xl bg-white p-4 font-bold">
+    ROI（%）＝ 利益額 ÷ 投資額 × 100
+  </div>
+
+  <p className="mt-3">
+    例えば仕入れ額10,000円で利益3,000円なら、
+    ROIは30%です。
+  </p>
+</div>
   <div>
     <h2 className="text-2xl font-bold mb-3">
       1万円仕入れて利益3000円なら効率はいい？
@@ -240,7 +310,7 @@ const comment =
   </div>
 
 </section>
-      <section className="mt-10 bg-white rounded-xl p-6">
+      <section className="mx-auto mt-10 max-w-3xl rounded-xl border bg-white p-5">
   <h2 className="text-xl font-bold mb-4">
     ROIを計算することが重要な理由
   </h2>
@@ -260,7 +330,7 @@ const comment =
     投資効率を自動で計算できます。
   </p>
   </section>
-<section className="mt-10 rounded-xl border bg-white p-5">
+<section className="mx-auto mt-10 max-w-3xl rounded-xl border bg-white p-5">
  <h2 className="text-xl font-bold mb-3">
   他の便利ツール
 </h2>
